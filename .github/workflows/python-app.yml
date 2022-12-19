@@ -41,8 +41,8 @@ jobs:
         CI: true
     - name: deploy     
       run: |
-        docker build -t${{ secrets.DOCKER_LOGIN }}/examDock .
-        docker run -d -p 5000:5000 ${{ secrets.DOCKER_LOGIN }}/examDock 
+        docker build -t${{ secrets.DOCKER_LOGIN }}/exam_dock .
+        docker run -d -p 5000:5000 ${{ secrets.DOCKER_LOGIN }}/exam_dock 
         docker ps -a
         docker login -u ${{ secrets.DOCKER_LOGIN }} -p ${{ secrets.DOCKER_PASS }}
-        docker push ${{ secrets.DOCKER_LOGIN }}/examDock:latest   
+        docker push ${{ secrets.DOCKER_LOGIN }}/exam_dock:latest   
